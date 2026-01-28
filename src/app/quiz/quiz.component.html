@@ -1,0 +1,25 @@
+<div class="full-screen">
+    <div class="quiz-box">
+  <h2>😂 Fun AdTech Quiz</h2>
+
+  <h3>Question {{currentQuestion+1}} / {{questions.length}}</h3>
+
+  <h4>{{questions[currentQuestion].question}}</h4>
+
+  <button *ngFor="let opt of questions[currentQuestion].options; let i=index"
+          (click)="selectAnswer(i)">
+    {{opt}}
+  </button>
+  <div class="popup correct" *ngIf="showCorrect">
+  🎉 Correct Answer! You are Genius 😎
+</div>
+
+<div class="popup wrong" *ngIf="showWrong">
+😵‍💫🤦‍♀️ Oops! Wrong Answer! Brain Loading...🤡
+</div>
+
+
+
+  <p>Score: {{score}}</p>
+</div>
+</div>
