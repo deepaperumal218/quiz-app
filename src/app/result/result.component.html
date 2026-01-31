@@ -1,12 +1,12 @@
-<div style="height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;
-background:linear-gradient(135deg,#4caf50,#8bc34a);color:white;font-family:Comic Sans MS;">
-
+<div class="result-container">
+    <div class="result-box">
 <h1>🏆 Quiz Completed!</h1>
-<h2>Your Final Score: {{score}}</h2>
+<h2>Your Final Score: {{quizState.score}}</h2>
 
-<h3 *ngIf="score > 3">🔥 AdTech Master!</h3>
-<h3 *ngIf="score <= 3">💪 You can do it! Keep Practicing!</h3>
+<h3 *ngIf="quizState.score > 3">🔥 AdTech Master!</h3>
+<h3 *ngIf="quizState.score <= 3">💪 You can do it! Keep Practicing!</h3>
 
 <button (click)="restartQuiz()">Restart Quiz 🔄</button>
 
+</div>
 </div>

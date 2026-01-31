@@ -2,20 +2,21 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { QuizStateService } from '../quiz-state.service';
+
 @Component({
   selector: 'app-result',
   standalone: true,
-  imports: [CommonModule],   // ✅ THIS IS THE FIX
-  templateUrl: './result.component.html'
+  imports: [CommonModule],   // ✅ VERY IMPORTANT
+  templateUrl: './result.component.html',
+  styleUrl: './result.component.scss'
 })
 export class ResultComponent {
 
-  score = history.state.score || 0;
+  constructor(public quizState: QuizStateService, private router: Router) {}
 
- constructor(private router: Router, private quizState: QuizStateService) {}
-restartQuiz() {
-  this.quizState.reset();     // reset question & score
-  this.router.navigate(['/']); // go to first question
+  restartQuiz() {
+    this.quizState.score = 0;
+    this.quizState.currentQuestion = 0;
+    this.router.navigate(['/']);
+  }
 }
-}
-

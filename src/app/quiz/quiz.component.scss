@@ -15,21 +15,6 @@
   font-family: Comic Sans MS;
 }
 
-button {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 10px;
-  border: none;
-  background: pink;
-  font-size: 18px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: lightgreen;
-}
 .popup {
   position: fixed;
   top: 0;
@@ -56,4 +41,20 @@ button:hover {
 @keyframes pop {
   from { transform: scale(0.5); }
   to { transform: scale(1); }
+}
+button {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  background: #ffb6c1;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #ff69b4;
+  transform: scale(1.03);
 }
